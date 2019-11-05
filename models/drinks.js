@@ -6,7 +6,7 @@ const drinkSchema = new mongoose.Schema({
   website: { type: String, required: true },
   ABV: { type: Number, required: true },
   description: { type: String },
-  flavors: { type: String },
+  flavors: [String],
   locator: { type: String }
 });
 

@@ -20,6 +20,10 @@
         <br />
         Flavors: <%=drinks[i].flavors%> <br />
         Locator: <%=drinks[i].locator%> <br />
+        <a href="/drinks/<%=drinks[i].id; %>/edit">Edit</a>
+        <form action="/drinks/<%=drinks[i].id; %>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE" />
+        </form>
       </li>
       <% } %>
     </ul>
