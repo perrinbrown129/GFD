@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>All GFDs</h1>
+    <nav>
+      <a href="/drinks/new">Add another GFD</a>
+    </nav>
+    <ul>
+      <% for(let i = 0; i < drinks.length; i++){ %>
+      <li>
+        Name: <a href="/drinks/<%=drinks[i].id; %>"><%=drinks[i].name%></a>
+        <br />
+        <img src="<%=drinks[i].img; %>" /> <br />
+        Website: <%=drinks[i].website %> <br />
+        ABV: <%=drinks[i].ABV%> <br />% Description: <%=drinks[i].description%>
+        <br />
+        Flavors: <%=drinks[i].flavors%> <br />
+        Locator: <%=drinks[i].locator%> <br />
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
