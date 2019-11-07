@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const DrinksModel = require("./drinks.js");
+const UserModel = require("./user");
 
 const seedDrinks = [
   {
@@ -145,6 +146,12 @@ const seedDrinks = [
   }
 ];
 
+const admin = {
+  username: "pbrawr",
+  password: "password",
+  admin: true
+};
+
 // Seeding function
 const seedDB = () => {
   // Declare db name, URI, and instantiate connection
@@ -161,6 +168,7 @@ const seedDB = () => {
   );
 
   DrinksModel.collection.drop();
+  UserModel.collection.drop();
 
   DrinksModel.create(seedDrinks, (err, newDrinks) => {
     if (err) {
@@ -168,8 +176,18 @@ const seedDB = () => {
     } else {
       console.log("Seeding OK: ", newDrinks);
     }
-    dbConnection.close();
   });
+
+  UserModel.create(admin, (err, newAdmin) => {
+    if (err) {
+      console.log("Create Admin Error: ", err);
+    } else {
+      console.log("Created admin: ", newAdmin);
+    }
+  });
+
+  // Close db connection after everything is completed
+  //   dbConnection.close();
 };
 
 seedDB();

@@ -2,26 +2,92 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GFDs</title>
-    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <style>
+      body {
+        background: url(https://cdn.pixabay.com/photo/2018/09/05/04/11/bubble-3655436_1280.jpg);
+        background-size: 100% auto;
+        color: white;
+      }
+      h1 {
+        padding: 0.5em;
+        padding-bottom: 0;
+        text-align: center;
+        font-size: 4em;
+        background: rgb(56, 141, 141);
+      }
+      h2 {
+        text-align: center;
+        font-size: 2em;
+        background: rgb(56, 141, 141);
+      }
+      button {
+        float: right;
+        margin: 5px;
+        border: solid 2px rgba(240, 128, 128, 0.8);
+      }
+      ul {
+        columns: 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      li {
+        list-style: none;
+      }
+      li a {
+        color: white;
+        font-size: 2em;
+      }
+      li a:hover {
+        color: rgb(6, 84, 123);
+      }
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+        height: 75%;
+      }
+      .square {
+        text-align: center;
+        margin: 2em;
+        background-color: rgba(240, 128, 128, 0.8);
+        border-radius: 25px;
+        padding-bottom: 2em;
+      }
+    </style>
   </head>
   <body>
-    <h1>Gluten-Free Drinks</h1>
+    <div id="21Modal" class="modal"></div>
     <button><a href="/admin/new">Admin Login</a></button>
-    <nav>
+    <button>
       <a href="/drinks/new">Add another GFD</a>
-    </nav>
+    </button>
+    <h1>GFDs (Gluten-Free or Good F*cking Drinks)</h1>
+    <h2>
+      just because you can't have gluten, doesn't mean you can't have a good
+      time
+    </h2>
+
     <ul>
       <% for(let i = 0; i < drinks.length; i++){ %>
       <li>
-        <a href="/drinks/<%=drinks[i].id; %>"><%=drinks[i].name%></a>
-        <br />
-        <img src="<%=drinks[i].img; %>" /> <br />
-        <!-- Website: <%=drinks[i].website %> <br />
+        <div class="square">
+          <a href="/drinks/<%=drinks[i].id; %>"><%=drinks[i].name%></a>
+          <br />
+          <img src="<%=drinks[i].img; %>" /> <br />
+          <!-- Website: <%=drinks[i].website %> <br />
         ABV: <%=drinks[i].ABV%>%<br />
         Description: <%=drinks[i].description%> <br />
         Flavors: <%=drinks[i].flavors%> <br />
         Locator: <%=drinks[i].locator%> <br /> -->
+        </div>
       </li>
       <% } %>
     </ul>

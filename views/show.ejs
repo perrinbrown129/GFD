@@ -2,16 +2,58 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title><%=drink.name%></title>
   </head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+  />
+  <style>
+    body {
+      background: url(https://cdn.pixabay.com/photo/2018/09/05/04/11/bubble-3655436_1280.jpg);
+      background-size: 100% auto;
+      color: white;
+    }
+    h1 {
+      padding: 0.5em;
+      text-align: center;
+      font-size: 3em;
+      background: rgb(56, 141, 141);
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      background: rgb(56, 141, 141);
+    }
+    button {
+      float: right;
+      margin: 5px;
+      border: solid 2px rgba(240, 128, 128, 0.8);
+    }
+    a:hover {
+      color: rgb(6, 84, 123);
+    }
+    .info {
+      display: flex;
+      margin: 2em;
+      background-color: rgba(240, 128, 128, 0.8);
+      border-radius: 25px;
+      padding-bottom: 2em;
+      font-size: 1em;
+    }
+  </style>
   <body>
-    <h1>Drinks show page</h1>
+    <h1><%=drink.name%></h1>
     <img src="<%=drink.img; %>" /> <br />
-    <%=drink.website %> <br />
-    <%=drink.ABV%> <br />
-    <%=drink.description%> <br />
-    <%=drink.flavors%> <br />
-    <%=drink.locator%> <br />
+    <div class="info">
+      <p>
+        <%=drink.website %> <br />
+        <%=drink.ABV%> <br />
+        <%=drink.description%> <br />
+        <%=drink.flavors%> <br />
+        <%=drink.locator%> <br />
+      </p>
+    </div>
     <nav>
       <a href="/drinks">Back to Drinks Index</a>
     </nav>

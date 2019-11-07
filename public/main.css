@@ -22,15 +22,18 @@ h1 {
 
 li {
   list-style: none;
+  color: white;
+}
+
+li a {
+  color: white;
 }
 /* 
 a:hover {
   color: ghostwhite;
 }
 
-li a {
-  color: mediumseagreen;
-}
+
 
 input[type="text"] {
   padding: 0.3em;
