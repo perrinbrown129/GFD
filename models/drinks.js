@@ -5,8 +5,8 @@ const drinkSchema = new mongoose.Schema({
   img: { type: String },
   website: { type: String, required: true },
   ABV: { type: Number, required: true },
-  description: { type: String },
-  flavors: [String],
+  description: { type: String, required: true },
+  flavors: { type: String },
   locator: { type: String }
 });
 
