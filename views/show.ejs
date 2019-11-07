@@ -19,18 +19,12 @@
       text-align: center;
       font-size: 3em;
       background: rgb(56, 141, 141);
-    }
-    h2 {
-      text-align: center;
-      font-size: 2em;
-      background: rgb(56, 141, 141);
-    }
-    button {
-      float: right;
-      margin: 5px;
-      border: solid 2px rgba(240, 128, 128, 0.8);
+      text-shadow: 2px 2px rgba(240, 128, 128, 0.8);
     }
     a:hover {
+      color: rgb(56, 141, 141);
+    }
+    a {
       color: rgb(6, 84, 123);
     }
     .info {
@@ -39,23 +33,33 @@
       background-color: rgba(240, 128, 128, 0.8);
       border-radius: 25px;
       padding-bottom: 2em;
-      font-size: 1em;
+      font-size: 2em;
+      padding: 1em;
+    }
+    .info2 {
+      margin: 1em;
+    }
+    strong {
+      color: white;
+      text-shadow: 2px 2px rgb(56, 141, 141);
     }
   </style>
   <body>
     <h1><%=drink.name%></h1>
-    <img src="<%=drink.img; %>" /> <br />
     <div class="info">
-      <p>
-        <%=drink.website %> <br />
-        <%=drink.ABV%> <br />
-        <%=drink.description%> <br />
-        <%=drink.flavors%> <br />
-        <%=drink.locator%> <br />
-      </p>
+      <img src="<%=drink.img; %>" />
+      <div class="info2">
+        <strong>ABV:</strong> <%=drink.ABV%>% <br />
+        <strong>Flavors:</strong> <%=drink.flavors%> <br />
+        <strong>About: </strong><%=drink.description%> <br />
+        <a href="<%=drink.website %>" target="_blank"
+          >Learn more about <%=drink.name%></a
+        >
+        <br />
+        <a href="<%=drink.locator%>" target="_blank">Find <%=drink.name%> </a>
+        <br />
+        <a href="/drinks">Back to GFD Home</a>
+      </div>
     </div>
-    <nav>
-      <a href="/drinks">Back to Drinks Index</a>
-    </nav>
   </body>
 </html>
