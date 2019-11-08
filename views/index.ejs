@@ -34,7 +34,7 @@
         border: solid 2px rgba(240, 128, 128, 0.8);
       }
       ul {
-        columns: 3;
+        columns: 4;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -45,7 +45,7 @@
       }
       li a {
         color: white;
-        font-size: 2em;
+        font-size: 1.9em;
       }
       li a:hover {
         color: rgb(6, 84, 123);
@@ -55,6 +55,8 @@
         margin-right: auto;
         width: 75%;
         height: 75%;
+        /* width: 50%;
+        height: 50%; */
       }
       .square {
         text-align: center;
@@ -63,11 +65,45 @@
         background-color: rgba(240, 128, 128, 0.8);
         border-radius: 25px;
         padding-bottom: 2em;
+        /* width: 375px; */
+      }
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        width: 40%;
+        height: 20%;
+        color: rgb(6, 84, 123);
+        font-size: 3em;
+        text-align: center;
+        border-radius: 25px;
+        text-shadow: 2px 2px rgba(240, 128, 128, 0.8);
+      }
+      .modal-buttons {
+        text-align: center;
+        float: none;
+        font-size: 0.75em;
+        border-radius: 15px;
+        color: rgb(6, 84, 123);
+        background-color: rgba(240, 128, 128, 0.8);
       }
     </style>
   </head>
   <body>
-    <div id="21Modal" class="modal"></div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p>Pssst are you over 21?</p>
+        <button class="modal-buttons" id="yes">hell yes!</button>
+        <button class="modal-buttons" id="no">uh no...</button>
+      </div>
+    </div>
     <button><a href="/admin/new">Admin Login</a></button>
     <button>
       <a href="/drinks/new">Add another GFD</a>
@@ -75,7 +111,7 @@
     <h1>GFDs (Gluten-Free or Good F*cking Drinks)</h1>
     <h2>
       just because you can't have gluten, doesn't mean you can't have a good
-      time;)
+      time <br />
     </h2>
 
     <ul>
@@ -94,5 +130,19 @@
       </li>
       <% } %>
     </ul>
+    <script>
+      let modal = document.getElementById("myModal");
+      setTimeout(() => {
+        modal.style.display = "block";
+      });
+      let yesbtn = document.getElementById("yes");
+      yesbtn.onclick = function() {
+        modal.style.display = "none";
+      };
+      let nobtn = document.getElementById("no");
+      nobtn.onclick = function() {
+        window.open("www.lacroixwater.com");
+      };
+    </script>
   </body>
 </html>

@@ -2,19 +2,73 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>New GFD</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <style>
+      body {
+        background: url(https://cdn.pixabay.com/photo/2018/09/05/04/11/bubble-3655436_1280.jpg);
+        background-size: cover;
+        color: white;
+        padding-bottom: 200px;
+      }
+      h1 {
+        padding: 0.5em;
+        padding-bottom: 0;
+        text-align: center;
+        font-size: 4em;
+        background: rgb(56, 141, 141);
+        text-shadow: 2px 2px rgba(240, 128, 128, 0.8);
+      }
+      h2 {
+        text-align: center;
+        font-size: 2em;
+        background: rgb(56, 141, 141);
+        text-shadow: 2px 2px rgba(240, 128, 128, 0.8);
+      }
+      a:hover {
+        color: rgb(56, 141, 141);
+      }
+      a {
+        color: rgb(6, 84, 123);
+      }
+      form {
+        margin: 2em;
+        background-color: rgba(240, 128, 128, 0.8);
+        border-radius: 25px;
+        padding-bottom: 2em;
+        font-size: 2em;
+        padding: 1em;
+        margin-bottom: 2em;
+        text-align: center;
+      }
+      strong {
+        color: white;
+        text-shadow: 2px 2px rgb(56, 141, 141);
+      }
+      .input {
+        width: 40em;
+      }
+    </style>
   </head>
   <body>
-    <h1>New GFD page</h1>
+    <h1>Let's add a new GFD!</h1>
+    <h2>the more the merrier, amirite?</h2>
+
     <form action="/drinks" method="POST">
-      Name: <input type="text" name="name" /><br />
-      Image: <input type="text" name="image" /><br />
-      Website: <input type="text" name="website" /><br />
-      ABV: <input type="number" name="ABV" /><br />
-      Description: <input type="text" name="Description" /><br />
-      Flavors: <input type="text" name="flavors" /><br />
-      Locator: <input type="text" name="locator" /><br />
-      <input type="submit" name="" value="Create GFD" />
+      <strong
+        >Name: <input type="text" name="name" class="input" /><br />
+        Image: <input type="text" name="image" class="input" /><br />
+        Website: <input type="text" name="website" class="input" /><br />
+        ABV: <input type="number" name="ABV" class="input" /><br />
+        Description:
+        <input type="text" name="description" class="input" /><br />
+        Flavors: <input type="text" name="flavors" class="input" /><br />
+        Locator: <input type="text" name="locator" class="input" /><br />
+        <input type="submit" name="" value="Create GFD" class="input" />
+      </strong>
     </form>
   </body>
 </html>
