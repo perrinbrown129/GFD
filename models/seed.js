@@ -155,12 +155,12 @@ const admin = {
 // Seeding function
 const seedDB = () => {
   // Declare db name, URI, and instantiate connection
-  // const dbName = "drinksdb";
+  const dbName = "drinksdb";
   // const dbURI = `mongodb://localhost:27017/${dbName}`;
 
   // Changing dbURI for heroku deployment
   const MONGODB_URI =
-    process.env.MONGODB_URI || "mongodb://localhost:27017/drinksdb";
+    process.env.MONGODB_URI || `mongodb://localhost:27017/${dbName}`;
   const dbConnection = mongoose.connection;
 
   dbConnection.on("error", err => console.log("DB Connection Error: ", err));
