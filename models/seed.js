@@ -155,16 +155,22 @@ const admin = {
 // Seeding function
 const seedDB = () => {
   // Declare db name, URI, and instantiate connection
-  const dbName = "drinksdb";
-  const dbURI = `mongodb://localhost:27017/${dbName}`;
+  // const dbName = "drinksdb";
+  // const dbURI = `mongodb://localhost:27017/${dbName}`;
+
+  // Changing dbURI for heroku deployment
+  const MONGODB_URI =
+    process.env.MONGODB_URI || "mongodb://localhost:27017/drinksdb";
   const dbConnection = mongoose.connection;
 
   dbConnection.on("error", err => console.log("DB Connection Error: ", err));
-  dbConnection.on("connected", () => console.log("DB Connected to: ", dbURI));
+  dbConnection.on("connected", () =>
+    console.log("DB Connected to: ", MONGODB_URI)
+  );
   dbConnection.on("disconnected", () => console.log("DB Disconnected"));
 
-  mongoose.connect(dbURI, { useNewUrlParser: true }, () =>
-    console.log(`${dbName} db running on ${dbURI}`)
+  mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () =>
+    console.log(`${dbName} db running on ${MONGODB_URI}`)
   );
 
   DrinksModel.collection.drop();
