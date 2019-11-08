@@ -43,6 +43,8 @@
         padding: 1em;
         margin-bottom: 2em;
         text-align: center;
+        width: 50%;
+        margin-left: 25%;
       }
       strong {
         color: white;
@@ -51,24 +53,39 @@
       .input {
         width: 40em;
       }
+      #submit {
+        background-color: rgb(56, 141, 141);
+        font-size: 0.8em;
+        width: 25%;
+        color: white;
+        justify-content: center;
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
     <h1>Let's add a new GFD!</h1>
     <h2>the more the merrier, amirite?</h2>
-
-    <form action="/drinks" method="POST">
-      <strong
-        >Name: <input type="text" name="name" class="input" /><br />
-        Image: <input type="text" name="image" class="input" /><br />
-        Website: <input type="text" name="website" class="input" /><br />
-        ABV: <input type="number" name="ABV" class="input" /><br />
-        Description:
-        <input type="text" name="description" class="input" /><br />
-        Flavors: <input type="text" name="flavors" class="input" /><br />
-        Locator: <input type="text" name="locator" class="input" /><br />
-        <input type="submit" name="" value="Create GFD" class="input" />
-      </strong>
-    </form>
+    <div class="info">
+      <form action="/drinks" method="POST">
+        <strong
+          >Name: <input type="text" name="name" class="input" /><br />
+          Image: <input type="text" name="image" class="input" /><br />
+          Website: <input type="text" name="website" class="input" /><br />
+          ABV: <input type="number" name="ABV" class="input" /><br />
+          Description:
+          <input type="text" name="description" class="input" /><br />
+          Flavors: <input type="text" name="flavors" class="input" /><br />
+          Locator: <input type="text" name="locator" class="input" /><br />
+          <input
+            type="submit"
+            name=""
+            value="Create GFD"
+            class="input"
+            id="submit"
+          />
+        </strong>
+      </form>
+    </div>
   </body>
 </html>
