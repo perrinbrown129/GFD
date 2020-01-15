@@ -54,7 +54,7 @@ const seedDrinks = [
   {
     name: "Mighty Swell Spiked Spritzer",
     img:
-      "https://products2.imgix.drizly.com/ci-mighty-swell-grapefruit-a5c19db12a3b52fc.png?auto=format%2Ccompress&fm=jpeg&q=20",
+      "https://products0.imgix.drizly.com/ci-mighty-swell-watermelon-mint-b3f1a356a867944d.png?auto=format%2Ccompress&fm=jpeg&q=20",
     website: "https://mightyswell.com/",
     ABV: 5,
     description:

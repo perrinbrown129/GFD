@@ -4,27 +4,6 @@ const router = express.Router();
 const User = require("../models/user.js");
 const Drinks = require("../models/drinks.js");
 
-// router.get("/", (req, res) => {
-//   User.findOne({ username: req.body.username }, (err, foundUser) => {
-//     if (req.body.password == foundUser.password) {
-//       res.send("Hello Perrin");
-//     } else {
-//       res.send("wrong password");
-//     }
-//   });
-// });
-
-// router.get("/perrin", (req, res) => {
-//   const perrin = {
-//     username: "pbrawr",
-//     password: "password",
-//     admin: true
-//   };
-//   User.create(perrin, (err, createdUser) => {
-//     res.redirect("/drinks");
-//   });
-// });
-
 router.post("/login", (req, res) => {
   console.log("sent:", req.body);
   User.findOne({ username: req.body.username }, (err, foundUser) => {
@@ -39,7 +18,6 @@ router.post("/login", (req, res) => {
           });
         }
       });
-      // res.redirect("/drinks");
     } else {
       res.send("wrong password");
     }
